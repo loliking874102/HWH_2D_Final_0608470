@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         float v = joystick.Vertical;
         print("垂直 =" + v);
         //變形元件.位移(h水平*速度*一楨,v垂直*速度*一楨,0)
-        transform.Translate(h * speed * Time.deltaTime,v * speed * Time.deltaTime ,0);
+        transform.Translate(h * speed * Time.deltaTime,0 ,0);
         ani.SetFloat("水平", h);
         ani.SetFloat("垂直", v);
     }
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     {
         if (Isdead) return;
         aud.PlayOneShot(soundAttack, 0.5f);
+        this.ani.SetTrigger("PlayAttack");
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, rangeAttack, -transform.up,  0,1 << 8);
         //如果 碰到物件.碰撞.tag為道具 碰到物件.碰撞.取得數值<數值名稱>.方法();
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().Dropprop();

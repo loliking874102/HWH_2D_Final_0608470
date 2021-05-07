@@ -23,6 +23,8 @@ public class Ai : MonoBehaviour
     public float exp = 50;
     private bool Isdead = false;
     private Player _player;
+    [Header("動畫元件")]
+    public Animator ani;
     /// <summary>
     /// 計時器
     /// </summary>
@@ -84,6 +86,7 @@ public class Ai : MonoBehaviour
             psparticle.Play();   //播放攻擊特效
             Collider2D hit = Physics2D.OverlapCircle(transform.position, rangeAtt, 1 << 9 );
             hit.GetComponent<Player>().Hit(attackdam);
+            this.ani.SetTrigger("emiAttack");
         }
     }
     /// <summary>
