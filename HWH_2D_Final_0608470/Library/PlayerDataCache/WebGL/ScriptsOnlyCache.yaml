@@ -722,4 +722,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/2Dapp.unity
-  playerPath: D:/user/Desktop/HWH_2D_Final_0608470/w
+  playerPath: D:/user/Desktop/HWH_2D_Final_0608470/web
