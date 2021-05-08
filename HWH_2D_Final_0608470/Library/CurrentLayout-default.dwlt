@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 247
     height: 661
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -682,7 +682,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: aac4ffffbec4ffff7ec5ffff5efbffff
+      m_ExpandedIDs: 30f9ffff44f9ffff46f9ffff72f9ffff86f9ffff46faffff5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -890,11 +890,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1080
-      height: 619
+      height: 640
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 540, y: 309.5}
+    m_Translation: {x: 540, y: 320}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -902,9 +902,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -540
-      y: -309.5
+      y: -320
       width: 1080
-      height: 619
+      height: 640
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1080, y: 640}
