@@ -40,13 +40,9 @@ public class Ai : MonoBehaviour
     //繪製圖示事件:輔助開發
     private void OnDrawGizmos()
     {   
-        //繪製顏色
         Gizmos.color = new Color(0, 0, 3, 0.35f);
-        //繪製形狀(中心點,半徑)
         Gizmos.DrawSphere(transform.position, rangeTrack);
-        //繪製顏色
         Gizmos.color = new Color(1, 0, 0, 0.35f);
-        //繪製形狀(中心點,半徑)
         Gizmos.DrawSphere(transform.position, rangeAtt);
     }
     private void Update()
@@ -59,17 +55,14 @@ public class Ai : MonoBehaviour
     private void Track()
     {
         if (Isdead) return;
-                    //距離=三維向量的距離(a,b)
         float tra = Vector3.Distance(transform.position, player.position);
-        //如果(距離小於等於追蹤範圍)開始攻擊
-        //否則(距離小於等於追蹤範圍)才開始追蹤
+
         if(tra <= rangeAtt)
         {
             Attack();
         }
         else if(tra <= rangeTrack)
         {
-            //物件座標 更新為 三維向量 的往前移動 (物件座標,目標座標,速度*一禎的時間)
             transform.position=Vector3.MoveTowards(transform.position,player.position, speed*Time.deltaTime);
         }
     }
@@ -82,8 +75,8 @@ public class Ai : MonoBehaviour
         //如果時間大於等於攻擊冷卻時間 就攻擊
         if(timer >= attTime)
         {
-            timer = 0;    //計時器歸零
-            psparticle.Play();   //播放攻擊特效
+            timer = 0;   
+            psparticle.Play();   
             Collider2D hit = Physics2D.OverlapCircle(transform.position, rangeAtt, 1 << 9 );
             hit.GetComponent<Player>().Hit(attackdam);
             this.ani.SetTrigger("emiAttack");
